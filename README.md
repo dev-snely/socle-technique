@@ -13,24 +13,25 @@ Ce projet est une application minimaliste construite avec **Spring Boot**, dépl
 - `src/main/java/com/log430/socle/`: Code source de l’application.
 - `src/test/javacom/log430/socle/`: Tests pour le code source de l’application.
 - `Dockerfile`: Définit la façon dont l’image Docker est construite.
+- `docker-compose.yml`: Définit comment le conteneur est lancé (port, image, etc.).
 - `.github/workflows/ci.yml`: Fichier de pipeline CI/CD.
 - `README.md`: Documentation du projet.
 
 ---
 
 ## Étapes pour exécuter l'application localement avec Docker
-### 1. Cloner le dépôt
+
+Assurez-vous d’avoir docker et docker compose installés. Puis :
 ```bash
 git clone https://github.com/dev-snely/socle-technique
-cd socle
+cd socle-technique
+docker compose up -d
 ```
-### 2. Construire l'image Docker
+Ça va télécharger et démarrer automatiquement l’image socle, puis l'application sera disponible sur http://localhost:8080.
+
+ Pour arrêter le conteneur: 
 ```bash
-docker build -t socle-api .
-```
-### 3. Lancer le conteneur
-```bash
-docker run -d -p 8080:8080 socle-api
+docker compose down
 ```
 
 ---
