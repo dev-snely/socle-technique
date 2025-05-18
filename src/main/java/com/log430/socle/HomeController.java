@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @GetMapping("/") // Utilise @GetMapping pour simplifier le mapping GET sur "/"
-    public String index(){
+    public String index() {
         return "Hello World!"; // Retourne directement le contenu
     }
 }
