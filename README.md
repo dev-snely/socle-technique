@@ -11,7 +11,7 @@ Ce projet est une application minimaliste construite avec **Spring Boot**, dépl
 ## Architecture du projet
 
 - `src/main/java/com/log430/socle/`: Code source de l’application.
-- `src/test/javacom/log430/socle/`: Tests pour le code source de l’application.
+- `src/test/java/com/log430/socle/`: Tests pour le code source de l’application.
 - `Dockerfile`: Définit la façon dont l’image Docker est construite.
 - `docker-compose.yml`: Définit comment le conteneur est lancé (port, image, etc.).
 - `.github/workflows/ci.yml`: Fichier de pipeline CI/CD.
