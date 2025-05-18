@@ -1,22 +1,25 @@
 package com.log430.socle;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Point d'entrée de l'application Spring Boot.
+ */
 @SpringBootApplication
-public class SocleApplication implements CommandLineRunner {
-
-    private static final Logger logger = LoggerFactory.getLogger(SocleApplication.class);
-
-    public static void main(String[] args) {
-        SpringApplication.run(SocleApplication.class, args);
+public final class SocleApplication {
+    /**
+     * Constructeur privé pour empêcher l'instanciation.
+     */
+    private SocleApplication() {
+        // Empêche l'instanciation
     }
 
-    @Override
-    public void run(String... args) {
-        logger.info("Hello World depuis la console !");
+    /**
+     * Méthode principale.
+     * @param args les arguments de la ligne de commande
+     */
+    public static void main(final String[] args) {
+        SpringApplication.run(SocleApplication.class, args);
     }
 }

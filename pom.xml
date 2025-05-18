@@ -58,6 +58,28 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <!-- Plugin Checkstyle -->
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <version>3.3.0</version>
+            <executions>
+                <execution>
+                <phase>verify</phase>
+                <goals>
+                    <goal>check</goal>
+                </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <!-- Utilise les règles SUN ou remplace par google_checks.xml ou ton propre fichier -->
+                <configLocation>sun_checks.xml</configLocation>
+                <encoding>UTF-8</encoding>
+                <consoleOutput>true</consoleOutput>
+                <failsOnError>true</failsOnError>
+                <linkXRef>false</linkXRef>
+            </configuration>
+            </plugin>
         </plugins>
     </build>
 

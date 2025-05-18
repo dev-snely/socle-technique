@@ -1,13 +1,20 @@
 package com.log430.socle;
 
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@RestController // Utilise @RestController au lieu de @Controller
-public class HomeController {
+/**
+ * Contrôleur de base de l'application.
+ */
+@RestController
+public final class HomeController {
 
-    @GetMapping("/") // Utilise @GetMapping pour simplifier le mapping GET sur "/"
+    /**
+     * Répond à la racine de l'application.
+     * @return un message texte
+     */
+    @GetMapping("/")
     public String index() {
-        return "Hello World!"; // Retourne directement le contenu
+        return "Hello World!";
     }
 }
