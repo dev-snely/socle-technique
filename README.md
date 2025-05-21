@@ -1,4 +1,4 @@
-# Laboratoire 0 - Infrastructure - Docker, Kubernets, Version Control, CD/CI
+# Laboratoire 0 - Infrastructure - Docker, Version Control, CD/CI
 ###### Cours : Architecture Logicielle (LOG430)
 ###### Session : ÉTÉ 2025
 ###### Date du laboratoire : Semaine du 12 mai 2025
@@ -18,6 +18,15 @@ Ce projet est une application minimaliste construite avec **Spring Boot**, dépl
 - `README.md`: Documentation du projet.
 
 ---
+
+## Pour Éxecuter le projet sur la VM
+1. Connectez-vous à la VM de production 
+2. Dirigez-vous dans le dossier socle-technique
+3. Afficher le résultat avec la commande curl.
+```bash
+cd socle-technique
+curl http://localhost:8080
+```
 
 ## Étapes pour exécuter l'application localement avec Docker
 
