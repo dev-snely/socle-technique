@@ -175,8 +175,6 @@ J'ai décidé de prendre l’organisation standard Maven avec les dossiers `src/
 - Le code reste clair, modulaire, et conforme aux bonnes pratiques d’architecture logicielle.
 - Nécessite une injection de dépendances (Spring) pour relier les couches.
 
-## 3. ADR - Architecture Decision Records
-
 ### ADR-002 : Choix du mécanisme de persistance — JPA avec base de données relationnelle
 
 #### Date
