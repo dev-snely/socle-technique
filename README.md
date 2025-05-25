@@ -53,7 +53,7 @@ Une pipeline CI/CD GitHub Actions est configurée pour:
 4. **Publication** : Publie automatiquement l’image sur Docker Hub.
 
 ##### *Exemple de pipeline réussie :*
-![CI/CD réussite](./docs/cicd-success.png)
+![CI/CD réussite](./docs/lab0/cicd-success.png)
 
 👉 [Lien vers les actions Github](https://github.com/dev-snely/socle-technique/actions)
 

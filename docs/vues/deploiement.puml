@@ -1,0 +1,14 @@
+@startuml vue_deploiement
+skinparam style strictuml
+skinparam defaultFontName Verdana
+
+node "Poste utilisateur" {
+    component "Console App\n(Spring Boot CLI)" as client
+}
+
+node "Base de données locale" {
+    database "RDBMS (PostgreSQL)" as db
+}
+
+client --> db : Accès via JDBC / ORM (JPA, Hibernate)
+@enduml

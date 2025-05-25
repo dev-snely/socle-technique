@@ -1,0 +1,23 @@
+@startuml dpt_cu2
+skinparam style strictuml
+skinparam defaultFontName Verdana
+
+participant "Console (UI)" as UI
+participant "VenteService" as Service
+participant "VenteRepository" as VenteRepo
+participant "ProduitRepository" as ProduitRepo
+database "Base de données" as DB
+
+UI -> Service : enregistrerVente(listeProduits)
+Service -> ProduitRepo : vérifierDisponibilité(listeProduits)
+ProduitRepo -> DB : SELECT * WHERE id IN (...)
+DB --> ProduitRepo : produits
+ProduitRepo --> Service : produits
+
+Service -> VenteRepo : save(vente)
+VenteRepo -> DB : INSERT INTO vente ...
+
+Service -> ProduitRepo : updateQuantites()
+ProduitRepo -> DB : UPDATE produits SET quantité = ...
+Service --> UI : confirmation
+@enduml

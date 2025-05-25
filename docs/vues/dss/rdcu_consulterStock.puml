@@ -1,0 +1,16 @@
+@startuml dpt_cu5
+skinparam style strictuml
+skinparam defaultFontName Verdana
+
+participant "Console (UI)" as UI
+participant "ProduitService" as Service
+participant "ProduitRepository" as Repo
+database "Base de données" as DB
+
+UI -> Service : consulterStock()
+Service -> Repo : findAll()
+Repo -> DB : SELECT * FROM produit
+DB --> Repo : listeProduits
+Repo --> Service : listeProduits
+Service --> UI : listeProduits
+@enduml

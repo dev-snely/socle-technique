@@ -1,0 +1,13 @@
+@startuml dss_cu1
+skinparam style strictuml
+skinparam defaultFontName Verdana
+skinparam sequence {
+    MessageAlign center
+}
+
+actor Utilisateur as user
+participant "Système (Application + BD)" as Systeme
+
+user -> Systeme : rechercherProduit(critère)
+Systeme --> user : afficherRésultats(listeProduits)
+@enduml

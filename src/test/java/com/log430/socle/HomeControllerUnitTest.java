@@ -3,6 +3,8 @@ package com.log430.socle;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+import com.log430.monmagasin.HomeController;
+
 class HomeControllerUnitTest {
 
     @Test

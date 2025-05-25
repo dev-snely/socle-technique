@@ -1,0 +1,13 @@
+@startuml dss_cu3
+skinparam style strictuml
+skinparam defaultfontname Verdana
+skinparam sequence {
+    MessageAlign center
+}
+
+actor Utilisateur as user
+participant "Système (Application + BD)" as system
+
+user -> system : consulterStockProduits()
+system -> user : afficherListeProduits(listeProduits)
+@enduml

@@ -1,0 +1,35 @@
+@startuml Diagramme de classe pour le système de vente
+
+class Produit {
+  - id: Long
+  - nom: String
+  - prix: double
+  - quantiteEnStock: int
+  --
+  +mettreAJourStock(qte: int): void
+}
+
+class Vente {
+  - id: Long
+  - date: LocalDate
+  - produitsVendus: List<Produit>
+  - total: double
+  --
+  +calculerTotal(): double
+  +ajouterProduit(p: Produit): void
+}
+
+class Retour {
+  - id: Long
+  - date: LocalDate
+  - referenceDeVente: Vente
+  - produitsRetournes: List<Produit>
+  --
+  +rembourser(): void
+}
+
+Vente "1" --> "*" Produit : vend
+Retour "1" --> "*" Produit : retourne
+Retour "*" --> "1" Vente : référence
+
+@enduml

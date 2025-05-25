@@ -1,0 +1,16 @@
+@startuml dpt_cu1
+skinparam style strictuml
+skinparam defaultFontName Verdana
+
+participant "Console (UI)" as UI
+participant "ServiceProduit" as Service
+participant "ProduitRepository (JPA)" as Repo
+database "Base de données" as DB
+
+UI -> Service : rechercherProduit(critère)
+Service -> Repo : findByCritere(critère)
+Repo -> DB : requête SQL
+DB --> Repo : listeProduits
+Repo --> Service : listeProduits
+Service --> UI : listeProduits
+@enduml

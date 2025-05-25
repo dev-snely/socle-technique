@@ -1,0 +1,24 @@
+@startuml dpt_cu3
+skinparam style strictuml
+skinparam defaultFontName Verdana
+
+participant "Console (UI)" as UI
+participant "RetourService" as Service
+participant "VenteRepository" as VenteRepo
+participant "RetourRepository" as RetourRepo
+participant "ProduitRepository" as ProduitRepo
+database "Base de données" as DB
+
+UI -> Service : enregistrerRetour(idVente, produitsRetournes)
+Service -> VenteRepo : findById(idVente)
+VenteRepo -> DB : SELECT * FROM vente WHERE id=...
+DB --> VenteRepo : vente
+VenteRepo --> Service : vente
+
+Service -> RetourRepo : save(retour)
+RetourRepo -> DB : INSERT INTO retour ...
+
+Service -> ProduitRepo : réapprovisionnerProduits()
+ProduitRepo -> DB : UPDATE produits SET quantité = quantité + ...
+Service --> UI : confirmation
+@enduml

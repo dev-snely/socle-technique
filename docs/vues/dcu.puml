@@ -1,0 +1,18 @@
+@startuml Diagramme de cas d'utilisation
+skinparam style strictuml
+skinparam defaultFontName Verdana
+
+actor "Employé" as emp
+
+rectangle "Système de caisse" {
+  usecase "Rechercher un produit" as UC1
+  usecase "Enregistrer une vente" as UC2
+  usecase "Gérer un retour" as UC3
+  usecase "Consulter le stock" as UC4
+}
+
+emp --> UC1
+emp --> UC2
+emp --> UC3
+emp --> UC4
+@enduml

@@ -1,0 +1,15 @@
+@startuml dss_cu1
+skinparam style strictuml
+skinparam defaultfontname Verdana
+skinparam sequence {
+    MessageAlign center
+}
+
+actor Utilisateur as user
+participant "Système (Application + BD)" as system
+
+user -> system : enregistrerVente(listeProduits)
+system --> user : afficherTotal(total)
+user -> system : confirmerVente()
+system -> user : afficherConfirmation("Vente enregistrée")
+@enduml

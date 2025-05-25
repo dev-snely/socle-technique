@@ -1,0 +1,17 @@
+@startuml dss_cu2
+skinparam style strictuml
+skinparam defaultfontname Verdana
+skinparam sequence {
+    MessageAlign center
+}
+
+actor Utilisateur as user
+participant "Système (Application + BD)" as system
+
+user -> system : initierRetourProduit()
+system --> user : demanderReferenceVente()
+user -> system : fournirReferenceVente(idVente)
+system --> user : demanderProduitsRetournes()
+user -> system : fournirProduitsRetournes(listeProduits)
+system -> user : afficherConfirmationRetour()
+@enduml
