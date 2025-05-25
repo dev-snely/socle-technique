@@ -25,6 +25,7 @@ Classe principales:
 `Produit`: id, name, prix, quantite
 `Vente` : d, date, listeDeProduitVendu, total
 `Retour`: id, date, referenceDeVente, produitsRetournes
+
 ![diagramme de classes](../vues/ddc.png)
 
 ### 2.2. Vue des processus - DSS
