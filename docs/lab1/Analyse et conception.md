@@ -76,6 +76,16 @@ Dans cette architecture, on suit le principe de séparation des responsabilités
     └── test/
         └── java/
 ```
+##### Voici une vue sur l'architecture mise en place pour la communication entre client et DB:
+```
+[ Présentation (Console) ] ← interaction utilisateur
+         ↓
+[ Service (métier) ] ← logique de gestion
+         ↓
+[ Persistance (Repository / JPA) ] ← accès à la DB H2
+         ↓
+[ Base de données H2 ]
+```
 
 #### 2.4.1 Présentation (UI / Console)
 
@@ -223,6 +233,10 @@ Pour ce projet, nous avons choisi PostgreSQL comme SGBD relationnel. Ce choix s�
 ### 4.2. JPA / Hibernate
 
 Le projet utilise JPA (Java Persistance Api) comme spécification de persistance, car elle fournit un modèle standardisé, maintenable et documenté pour interagir avec une base de données relationnelle. L’implémentation choisie est Hibernate, qui est le moteur JPA par défaut dans Spring Boot. Ce choix permet de bénéficier d’une intégration des données fluide, d’un système mature de gestion des entités, et d’une compatibilité directe avec PostgreSQL.
+
+- Spring Boot + JPA génèrent automatiquement les tables correspondantes dans la base.
+- Itiliser la puissance de l’ORM (Hibernate) pour manipuler des objets Java plutôt que d’écrire des requêtes SQL manuelles
+- L'application sait comment faire le lien entre les objets et les tables.
 
 Sa dépendance est la suivante:
 
